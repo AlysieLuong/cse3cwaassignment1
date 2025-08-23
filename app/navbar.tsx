@@ -35,7 +35,6 @@ export default function NavBar({ children }: NavBarProps) {
     <div className={Styles.navContainer}>
       <nav className={Styles.navbar}>
         <Link href="/" className={Styles.navButton}>Home</Link>
-        <Link href="/about" className={Styles.navButton}>About</Link>
         <Link href="/pre-lab-questions" className={Styles.navButton}>Pre-Lab Questions</Link>
         <Link href="/coding-resources" className={Styles.navButton}>Coding Resources</Link>
         <Link href="/escape-room" className={Styles.navButton}>Escape Room</Link>
@@ -43,6 +42,7 @@ export default function NavBar({ children }: NavBarProps) {
       </nav>
 
       <div className={Styles.hamburgerContainer}>
+        <Link href="/about" className={Styles.navButton}>About</Link>
         <button onClick={toggleTheme} className={Styles.themeToggle}>
             {darkMode ? "☀" : "☾"}
         </button>
