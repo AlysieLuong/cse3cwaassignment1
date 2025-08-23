@@ -1,5 +1,6 @@
+"use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Styles from './navbar.module.css';
 import HamburgerMenu from './hamburgermenu';
@@ -9,9 +10,29 @@ type NavBarProps = {
 };
 
 export default function NavBar({ children }: NavBarProps) {
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            setDarkMode(true);
+            document.body.classList.add(Styles.dark);
+        }
+    }, []);
+
+    const toggleTheme = () => {
+        if (darkMode) {
+            document.body.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+        } else {
+            document.body.classList.add("dark");
+            localStorage.setItem("Theme", "dark");
+        }
+        setDarkMode(!darkMode);
+    }
+
   return (
     <div className={Styles.navContainer}>
-      {/* Main Navigation Buttons - Far Left */}
       <nav className={Styles.navbar}>
         <Link href="/" className={Styles.navButton}>Home</Link>
         <Link href="/about" className={Styles.navButton}>About</Link>
@@ -21,8 +42,10 @@ export default function NavBar({ children }: NavBarProps) {
         {children}
       </nav>
 
-      {/* Hamburger Menu - Far Right */}
       <div className={Styles.hamburgerContainer}>
+        <button onClick={toggleTheme} className={Styles.themeToggle}>
+            {darkMode ? "☀" : "☾"}
+        </button>
         <HamburgerMenu />
       </div>
     </div>
