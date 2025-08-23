@@ -1,6 +1,8 @@
+
 import React from 'react';
 import Link from 'next/link';
 import Styles from './navbar.module.css';
+import HamburgerMenu from './hamburgermenu';
 
 type NavBarProps = {
     children?: React.ReactNode;
@@ -8,12 +10,21 @@ type NavBarProps = {
 
 export default function NavBar({ children }: NavBarProps) {
   return (
-    <nav className={Styles.nav}>
-      <Link href="/" className={Styles.link}>Home</Link>
-      <Link href="/about" className={Styles.link}>About</Link>
-      <Link href="/coding-resources" className={Styles.link}>Coding Resources</Link>
-      <Link href="/escape-room" className={Styles.link}>Escape Room</Link>
-      {children}
-    </nav>
+    <div className={Styles.navContainer}>
+      {/* Main Navigation Buttons - Far Left */}
+      <nav className={Styles.navbar}>
+        <Link href="/" className={Styles.navButton}>Home</Link>
+        <Link href="/about" className={Styles.navButton}>About</Link>
+        <Link href="/pre-lab-questions" className={Styles.navButton}>Pre-Lab Questions</Link>
+        <Link href="/coding-resources" className={Styles.navButton}>Coding Resources</Link>
+        <Link href="/escape-room" className={Styles.navButton}>Escape Room</Link>
+        {children}
+      </nav>
+
+      {/* Hamburger Menu - Far Right */}
+      <div className={Styles.hamburgerContainer}>
+        <HamburgerMenu />
+      </div>
+    </div>
   );
 }

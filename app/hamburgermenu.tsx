@@ -1,31 +1,71 @@
-'use client'
-import { useState } from 'react';
-import styles from './HamburgerMenu.module.css';
+"use client";
 
-const HamburgerMenu = () => {
+import React, { useState } from 'react';
+import Link from 'next/link';
+import styles from './hamburgermenu.module.css';
+
+export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.hamburger} onClick={toggleMenu}>
-        <div className={isOpen ? styles.barOpen : styles.bar}></div>
-        <div className={isOpen ? styles.barOpen : styles.bar}></div>
-        <div className={isOpen ? styles.barOpen : styles.bar}></div>
-      </div>
-      <nav className={isOpen ? styles.menuOpen : styles.menu}>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/Coding Resources">Coding Resources</a></li>
-          <li><a href="/Escape Room">Escape Room</a></li>
-        </ul>
-      </nav>
-    </div>
-  );
-};
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
-export default HamburgerMenu;
+  return (
+    <>
+      <div className={styles.container}>
+        <div 
+          className={styles.hamburger} 
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
+        >
+          <div className={isOpen ? styles.barOpen : styles.bar}></div>
+          <div className={isOpen ? styles.barOpen : styles.bar}></div>
+          <div className={isOpen ? styles.barOpen : styles.bar}></div>
+        </div>
+      </div>
+
+      <div className={isOpen ? styles.menuOpen : styles.menu}>
+        <ul>
+          <li>
+            <Link href="/" onClick={closeMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" onClick={closeMenu}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="/pre-lab-questions" onClick={closeMenu}>
+              Pre-lab Questions
+            </Link>
+          </li>
+          <li>
+            <Link href="/coding-resources" onClick={closeMenu}>
+              Coding Resources
+            </Link>
+          </li>
+          <li>
+            <Link href="/escape-room" onClick={closeMenu}>
+              Escape Room
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {isOpen && (
+        <div 
+          className={styles.overlay} 
+          onClick={closeMenu}
+        ></div>
+      )}
+    </>
+  );
+}
