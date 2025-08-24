@@ -1,3 +1,4 @@
+/*styles footer container*/
 .footerContainer {
     width: 100%;
     padding: 1rem 2rem;
@@ -11,10 +12,9 @@
     transition: all 0.3s ease;
 }
 
-
-
-.dark .footerContainer {
-    border-top-color: rgba(30, 30, 30, 0.9);
-    color: #2c3e50;
-} 
-
+/*styles foot container - dark mode*/
+:global(body.dark) .footerContainer {
+   background-color: rgba(30, 30, 30, 0.9) !important;
+    border-top-color: rgba(30, 30, 30, 0.9) !important;
+    color: #f5f5f5 !important;
+}

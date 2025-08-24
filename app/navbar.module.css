@@ -1,4 +1,4 @@
-
+/*styles navbar container appearance and positioning*/
 .navContainer {
   display: flex;
   justify-content: space-between; 
@@ -10,12 +10,14 @@
   padding: 1rem 2rem;
 }
 
+/*styles navbar positioning*/
 .navbar {
   display: flex;
   align-items: center;
   gap: 1rem; 
 }
 
+/*styles navbar link buttons*/
 .navButton {
   padding: 0.8rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.2);
@@ -27,18 +29,21 @@
   transition: all 0.3s ease;
 }
 
+/*styles navbar lnk buttons - when hovering*/
 .navButton:hover {
   background-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/*holds hamburger menu in navbar*/
 .hamburgerContainer {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
+/*light/dark mode button*/
 .themeToggle {
   margin-right: 1rem;
   padding: 0.5rem 1rem;
@@ -51,39 +56,45 @@
   transition: all 0.3s ease;
 }
 
+/*light/dark mode button - hovering */
 .themeToggle:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-.dark {
-    background-color: #1e1e1e;
-    color: #f5f5f5;
+/* -----------DARK MODE-----------*/
+/*global effect*/
+/*styles navcontainer*/
+:global(body.dark) .navContainer {
+    background-color: rgba(30, 30, 30, 0.9) !important;
 }
 
-.dark * {
+/*styles navbutton*/
+:global(body.dark) .navButton {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
     color: #f5f5f5 !important;
 }
 
-.dark a {
-    color: #f5f5f5 !important;
-}
-
-.dark .navContainer {
-    background-color: rgba(30, 30, 30, 0.9);
-}
-
-.dark .navButton {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: #f5f5f5;
-}
-
-.dark .navButton:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+/*styles navbutton - hover*/
+:global(body.dark) .navButton:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
     color: #ffffff !important;
 }
 
-.dark .bar,
-.dark .barOpen {
-    background-color: #f5f5f5 !important;
+/*styles light/dark mode*/
+:global(body.dark) .themeToggle {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #f5f5f5 !important;
+}
+
+/*styles light/dark mode - hover*/
+:global(body.dark) .themeToggle:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/*styles hamburger menu - open*/
+:global(body.dark) .bar,
+:global(body.dark) .barOpen {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #f5f5f5 !important;
 }

@@ -1,7 +1,9 @@
+/* imports reusable components*/
 import Header from '../header';
 import NavBar from '../navbar';
 import Footer from '../footer';
 
+/* defining pre-lab questions page*/
 export default function PreLabQuestions() {
   return (
     <div>

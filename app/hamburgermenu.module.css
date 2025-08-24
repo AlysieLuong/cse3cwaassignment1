@@ -1,8 +1,9 @@
-/* Container */
+/*positions hamburgermenu*/
 .container {
   position: relative;
 }
 
+/*styles hamburger menu - three lines */
 .hamburger {
   cursor: pointer;
   display: flex;
@@ -17,12 +18,14 @@
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
+/*styles hamburger menu - hovering */
 .hamburger:hover {
   background-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/*styles hamburger menu - open effect 'x'*/
 .bar, .barOpen {
   width: 100%;
   height: 3px;
@@ -30,6 +33,7 @@
   transition: all 0.3s ease;
   border-radius: 2px;
 }
+
 
 .barOpen:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
@@ -43,10 +47,12 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/*styles hamburger menu - hidden */
 .menu {
   display: none;
 }
 
+/*styles hamburger menu - open and positioning*/
 .menuOpen {
   display: block;
   position: absolute;
@@ -62,12 +68,14 @@
   min-height: 200px; /* Ensure it has height */
 }
 
+/*removes list styling and spacing*/
 .menuOpen ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/*adds division lines between each menu*/
 .menuOpen li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -76,6 +84,7 @@
   border-bottom: none;
 }
 
+/*allows menus to be clickable*/
 .menuOpen li a {
   display: block;
   padding: 1rem 1.5rem;
@@ -89,6 +98,7 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+/* makes menu obvious when open*/
 .overlay {
   position: fixed;
   top: 0;

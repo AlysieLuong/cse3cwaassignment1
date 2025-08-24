@@ -1,8 +1,9 @@
+/* imports reusable components*/
 import Header from '../header';
 import NavBar from '../navbar';
 import Footer from '../footer';
-import HamburgerMenu from '../hamburgermenu';
 
+/* defining the about page*/
 export default function About() {
   return (
     <div>
@@ -14,7 +15,7 @@ export default function About() {
         <p>My student number is 21612368</p>
         <p>This is a video on explaining what features my website has and the codes used</p>
 
-        /*about me video*/
+        /* about me video */
         <video controls style={{marginTop: "1rem"}}>
           <source src="xxxxx" type="audio/mpeg"/>
         </video>

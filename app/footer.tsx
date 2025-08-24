@@ -1,6 +1,8 @@
+/* imports reusable components*/
 import React from "react";
 import Styles from "./footer.module.css";
 
+/*defines reusable component Footer*/
 export default function Footer() {
   return (
       <footer className={Styles.footerContainer}>

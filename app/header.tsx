@@ -1,9 +1,12 @@
+/* imports reusable components*/
 import styles from './header.module.css';
 
+/*defines prop types for header */
 type HeaderProps = {
     children?: React.ReactNode;
 };
 
+/*defines reusable component - header*/
 export default function Header({ children }: HeaderProps) {
     return (
         <header className={styles.header}>
