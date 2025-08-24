@@ -6,14 +6,13 @@ import Header from './header';
 import NavBar from './navbar';
 import Footer from './footer';
 
-/*defines shape of tabs in home page */
 type Tab = {
   id: number; 
   title: string;
   content: string;
 }
 
-/* defining the home page*/
+/*defines home page*/
 export default function Home() {
   /*list tabs*/
   const [tabs, setTabs] = useState<Tab[]>([
@@ -21,11 +20,8 @@ export default function Home() {
     { id: 2, title: "Step 2", content: "Step 2:\n1. Install VSCode\n2. Install Chrome\n3. Install Node\n4. etc" },
     { id: 3, title: "Step 3", content: "Content 3"}
   ]);
-
-  /*current active tab*/
   const [activeTab, setActiveTab] = useState(1);
 
-  /*load tab from localStorage*/
   useEffect(() => {
     const saved = localStorage.getItem('tabs');
     if (saved) {
@@ -35,12 +31,11 @@ export default function Home() {
     }
   }, []);
 
-  /*save tabs and activeTab to localStorage when changed*/
   useEffect(() => {
     localStorage.setItem('tabs', JSON.stringify({ tabs, activeTab }));
   }, [tabs, activeTab]);
 
-  /*add new tabs*/
+  /*add tabs*/
   const addTab = () => {
     if (tabs.length >= 15) return;
     const newId = Date.now();
@@ -55,12 +50,12 @@ export default function Home() {
     if (activeTab === id) setActiveTab(newTabs[0].id);
   };
 
-  /*update tab content*/
+  /*updating tab contents*/
   const updateTab = (id: number, field: 'title' | 'content', value: string) => {
     setTabs(tabs.map(t => t.id === id ? { ...t, [field]: value} : t));
   };
 
-  /*HTML code generation for all tabs opened*/
+  /*html generation for tabs*/
   const generateHTML = () => {
     return `<!DOCTYPE html>
 <html><head><title>Tabs</title></head><body style="font-family:Arial;margin:20px;background:#f5f5f5">
@@ -86,7 +81,6 @@ function show(i){
 </script></body></html>`;
   };
 
-  /*current active tab object*/
   const currentTab = tabs.find(t => t.id === activeTab);
 
   return (
@@ -95,11 +89,9 @@ function show(i){
       <NavBar />
       <main style={{ padding: "2rem" }}>
         <h1><b><big>Tabs</big></b></h1>
-
-        {/*home/tab page layout - tab headers, content and out */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginTop: '20px' }}>
           
-          {/*tab headers section*/}
+          {/*tabs appearance */}
           <div style={{ background: 'white', color: 'black', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', border: '1px solid #ddd' }}>
             <h2 style={{ color: 'black' }}>Tabs Headers <button onClick={addTab} disabled={tabs.length >= 15} style={{ color: 'black', background: 'white', border: '1px solid #ddd' }}>[+]</button></h2>
             {tabs.map(tab => (
@@ -115,8 +107,8 @@ function show(i){
             ))}
             <small style={{ color: '#666' }}>{tabs.length}/15 tabs</small>
           </div>
-
-          {/*tab contents section*/}
+          
+          {/*tab content editing appearance*/}
           <div style={{ background: 'white', color: 'black', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', border: '1px solid #ddd' }}>
             <h2 style={{ color: 'black' }}>Tabs Content</h2>
             {currentTab && (
@@ -131,7 +123,7 @@ function show(i){
             )}
           </div>
 
-          {/*output section*/}
+          {/*html output appearance*/}
           <div style={{ background: 'white', color: 'black', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', border: '1px solid #ddd' }}>
             <h2 style={{ color: 'black' }}>Output</h2>
             <div style={{ border: '1px solid #ddd', padding: '10px', fontSize: '11px', fontFamily: 'monospace', maxHeight: '200px', overflow: 'auto', background: '#f8f9fa' }}>
