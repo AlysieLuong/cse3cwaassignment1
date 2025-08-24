@@ -20,6 +20,22 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Assignment Explanation:
+This is assignment 1 for the subject CSE3CWA. For our first task, we were tasked with creating a home page that consisted
+of the tab features that helps generate html code in the box next to it which can be copy pasted into a note pad
+to make a html file which can then be opened into an actual file. 
+
+Beyond the home page, our page was required to have a:
+- a header
+- a footer
+- a navbar
+- a light/dark mode switch
+- a hamburger menu
+- and 4 other pages (about, coding resources, escape room and pre-lab-questions).
+
+The 'about' page will consist of personal details and a video demonstrating the code and how the website works. And the rest
+are work in progresses.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
