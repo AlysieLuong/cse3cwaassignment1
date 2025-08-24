@@ -15,9 +15,9 @@ export default function About() {
         <p>My student number is 21612368</p>
         <p>This is a video on explaining what features my website has and the codes used</p>
 
-        /* about me video */
-        <video controls style={{marginTop: "1rem"}}>
-          <source src="xxxxx" type="audio/mpeg"/>
+        {/* about website/code video*/}
+        <video controls style={{ marginTop: "1rem", width: "100%", maxWidth: "600px" }}>
+          <source src="/cse3cwassignment1video.mp4" type="video/mp4" />
         </video>
       </main>
       <Footer />
