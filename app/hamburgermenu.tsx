@@ -1,0 +1,71 @@
+"use client";
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import styles from './hamburgermenu.module.css';
+
+export default function HamburgerMenu() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <>
+      <div className={styles.container}>
+        <div 
+          className={styles.hamburger} 
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
+        >
+          <div className={isOpen ? styles.barOpen : styles.bar}></div>
+          <div className={isOpen ? styles.barOpen : styles.bar}></div>
+          <div className={isOpen ? styles.barOpen : styles.bar}></div>
+        </div>
+      </div>
+
+      <div className={isOpen ? styles.menuOpen : styles.menu}>
+        <ul>
+          <li>
+            <Link href="/" onClick={closeMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" onClick={closeMenu}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="/pre-lab-questions" onClick={closeMenu}>
+              Pre-lab Questions
+            </Link>
+          </li>
+          <li>
+            <Link href="/coding-resources" onClick={closeMenu}>
+              Coding Resources
+            </Link>
+          </li>
+          <li>
+            <Link href="/escape-room" onClick={closeMenu}>
+              Escape Room
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {isOpen && (
+        <div 
+          className={styles.overlay} 
+          onClick={closeMenu}
+        ></div>
+      )}
+    </>
+  );
+}
