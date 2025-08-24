@@ -25,7 +25,7 @@ This is assignment 1 for the subject CSE3CWA. For our first task, we were tasked
 of the tab features that helps generate html code in the box next to it which can be copy pasted into a note pad
 to make a html file which can then be opened into an actual file. 
 
-Beyond the home page, our page was required to have a:
+Beyond the home page, our website was required to have a:
 - a header
 - a footer
 - a navbar
