@@ -29,7 +29,7 @@
   transition: all 0.3s ease;
 }
 
-/*styles navbar lnk buttons - when hovering*/
+/*styles navbar link buttons - when hovering*/
 .navButton:hover {
   background-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
