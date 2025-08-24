@@ -1,8 +1,9 @@
+/* imports reusable components*/
 import Header from '../header';
 import NavBar from '../navbar';
 import Footer from '../footer';
-import HamburgerMenu from '../hamburgermenu';
 
+/* defining coding resources page*/
 export default function CodingResources() {
   return (
     <div>

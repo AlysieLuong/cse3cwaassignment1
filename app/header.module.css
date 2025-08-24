@@ -5,19 +5,16 @@
     border-radius: 8px;
     border-left: 5px solid #4ca1af;
 }
-
-/* Title container */.titleContainer {
+.titleContainer {
     text-align: center;
     margin-bottom: 1.5rem;
 }
-
 
 .mainTitle {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
-
 
 .subTitle {
     font-size: 1.1rem;

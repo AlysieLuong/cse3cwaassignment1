@@ -1,12 +1,15 @@
+/* imports reusable components*/
 "use client";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from './hamburgermenu.module.css';
 
+/*defines reusable component  hamburger menu*/
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
+  /*toggle hamburger menu open/close*/
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -17,19 +20,23 @@ export default function HamburgerMenu() {
 
   return (
     <>
+      
       <div className={styles.container}>
+        {/*hamburger icon*/}
         <div 
           className={styles.hamburger} 
           onClick={toggleMenu}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
         >
+          {/*hamburger bars*/}
           <div className={isOpen ? styles.barOpen : styles.bar}></div>
           <div className={isOpen ? styles.barOpen : styles.bar}></div>
           <div className={isOpen ? styles.barOpen : styles.bar}></div>
         </div>
       </div>
 
+      {/*page links*/}
       <div className={isOpen ? styles.menuOpen : styles.menu}>
         <ul>
           <li>
@@ -60,6 +67,7 @@ export default function HamburgerMenu() {
         </ul>
       </div>
 
+      {/*overlay behind menu*/}
       {isOpen && (
         <div 
           className={styles.overlay} 
