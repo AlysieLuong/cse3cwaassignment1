@@ -10,7 +10,9 @@ export default function About() {
       <NavBar />
       <main style={{ padding: "2rem" }}>
         <h1>About</h1>
-        <p>This is the about page content.</p>
+        <p>My name is Alysie Luong</p>
+        <p>My student number is 21612368</p>
+        <p>This is a video on how to use the video</p>
       </main>
       <Footer />
     </div>
