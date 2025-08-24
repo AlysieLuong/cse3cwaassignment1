@@ -9,9 +9,8 @@ export default function EscapeRoom() {
       <Header />
       <NavBar />
       <main style={{ padding: "2rem" }}>
-        <h1>Escape Room</h1>
-        <p>This is the Escape Room page content.
-          It is still currently a work in progress. 
+        <h1><b><big>Escape Room</big></b></h1>
+        <p>This is currently a work in progress. 
           Please come back later for a future update </p>
       </main>
       <Footer />

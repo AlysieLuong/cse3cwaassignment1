@@ -81,7 +81,7 @@ function show(i){
       <Header />
       <NavBar />
       <main style={{ padding: "2rem" }}>
-        <h1>Tabs</h1>
+        <h1><b><big>Tabs</big></b></h1>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginTop: '20px' }}>
           
           <div style={{ background: 'white', color: 'black', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', border: '1px solid #ddd' }}>

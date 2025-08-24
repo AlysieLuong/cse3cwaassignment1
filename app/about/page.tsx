@@ -9,10 +9,15 @@ export default function About() {
       <Header />
       <NavBar />
       <main style={{ padding: "2rem" }}>
-        <h1>About</h1>
+        <h1><b><big>About</big></b></h1>
         <p>My name is Alysie Luong</p>
         <p>My student number is 21612368</p>
-        <p>This is a video on how to use the video</p>
+        <p>This is a video on explaining what features my website has and the codes used</p>
+
+        /*about me video*/
+        <video controls style={{marginTop: "1rem"}}>
+          <source src="xxxxx" type="audio/mpeg"/>
+        </video>
       </main>
       <Footer />
     </div>
