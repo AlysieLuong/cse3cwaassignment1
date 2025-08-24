@@ -9,9 +9,8 @@ export default function CodingResources() {
       <Header />
       <NavBar />
       <main style={{ padding: "2rem" }}>
-        <h1>Coding Resources</h1>
-        <p>This is the Coding Resources page content. 
-          It is still currently a work in progress. 
+        <h1><b><big>Coding Resources</big></b></h1>
+        <p>This is currently a work in progress. 
           Please come back later for a future update </p>
       </main>
       <Footer />
